@@ -32,6 +32,12 @@ window.addEventListener("load", async e => {
     scramble();
 });
 
+document.addEventListener('keydown', (e) => {
+    if(e.keyCode === 32){
+        handleTimer();
+    }
+})
+
 function cubeSizesToSelect() {
     cubeSizesContainer.innerHTML = cubeSizes
         .map(cubeSize => `<option value=${cubeSize} ${cubeSize === "3x3x3" ? "selected" : ""}>${cubeSize}</option>`)
