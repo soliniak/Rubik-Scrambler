@@ -67,8 +67,8 @@ function handleTimer() {
 
 
 function timerStart() {
-    msec = "00"; sec = "00"; min = "00"; h = "00";
-    myTimer = setInterval(updateTime, 10);
+    msec = "00"; sec = "00"; min = "00"; h = "";
+    myTimer = setInterval(updateTime, 1);
     timerRun = true;
 }
 
@@ -103,11 +103,12 @@ function updateTime() {
                 if(h < 10) {
                     h = "0"+h;
                 }
+                h += ":";
             }  
         }
     }
 
-    time = h + ":" + min + ":" + sec + ":" + msec;
+    time = h + min + ":" + sec + ":" + msec;
     timer.innerText = time;
 }
 
